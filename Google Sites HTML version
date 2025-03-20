@@ -1,0 +1,39 @@
+//Google Sites in HTML???
+//Fully Coded by Ar4Asd1
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arkeno.org</title>
+  <style>
+    .bottom-half {
+      background-color: white;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body bgcolor="darkblue">
+  <font face="Arial Black" align="left">Arkeno.org</font>
+  <nav align="right">
+    <a href="#" onclick="showSection('home')">Home Page</a>
+    <a href="#" onclick="showSection('Page2')">Page 2</a>
+  </nav>
+  
+  <section id="home">
+    <h1 align="center">Arkeno</h1>
+    <p align="center">Welcome to Arkeno<p>
+    <hr>
+    <div class="bottom-half">
+      <p>This is a Google Site Type HTML Page</p>
+      <br>
+      <a href="https://sites.google.com/view/Arkeno-org"><button>Arkeno Google Site</button> </a>
+      <a href="https://arkeno-org.github.io/Arkeno-org">Arkeno Github Site</a>
+    </div>
+  </section>
+  
+  <section id="Page2">
+    <p>Hello</p>
+  </section>
+</body>
+</html>
