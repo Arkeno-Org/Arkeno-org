@@ -11,4 +11,7 @@ Please do not Fork and say this is yours. Arkeno is a bit Open-Source HTML Coded
 
 Use our code happily!
 
+NOTICE: We have a GPL 3.0 License so please adhear to that license before doing anything!
+
+
 
