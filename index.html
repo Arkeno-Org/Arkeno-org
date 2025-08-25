@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkeno</title>
+    <style>
+        body { background-color: #f0f0f0; font-family: Arial, sans-serif; color: #333; text-align: center; padding: 20px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        section { display: none; }
+        section.active { display: block; }
+        img { max-width: 100%; height: auto; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Website</h1>
+
+    <nav>
+        <a href="#" onclick="showSection('home')">Home Page</a> |
+        <a href="#" onclick="showSection('image')">About</a> |
+        <a href="#" onclick="showSection('more')">More</a>
+    </nav>
+    
+    <section id="home" class="active">
+        <h2>Home Page</h2>
+        <p>Welcome to Arkeno <br> Visit Our Website <a href = "https://sites.google.com/view/Arkeno-org">Arkeno</a></p>
+         
+    </section>
+    
+    <section id="image">
+        <h2>About</h2>
+      
+      <img src = "https://lh5.googleusercontent.com/AsgYgq3JnE2EH3AO9vlBfaYL7cM6Io0qzM5PiOr-FeCpyiYjPYDIn1_os7lsULng-oBvJgUJ_W2izFiUqJeGnQM=w16383"> </img>
+      <p>Arkeno is a Organization. Visit the Google Sites page for more, that is where updates are dropped. Arkeno Image Logo Above. <br> Arkeno is a Organization which includes Sports, Online Platforms,Community Engagement and more! You can find all the details and links as I mentioned earlier  on the Google Sites <br> <a href = "https://github.com/Arkeno-Org/Arkeno-org">Github Repositery </a></p>
+      
+    </section>
+    
+    <section id="more">
+        <h2>More</h2>
+        
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/World_Map_%28political%29.svg/800px-World_Map_%28political%29.svg.png?20240729185831">World Map</img>
+
+
+       
+    <p>GMT TIME</p>
+    <p id="currentTime"></p>
+
+     <input type="file" id="fileInput" />
+     
+     <br>
+     
+    <script>
+        // Function to display GMT time
+        function updateTime() {
+            const currentTime = new Date().toUTCString();
+            document.getElementById('currentTime').innerText = currentTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+        
+        
+    function saveFile() {
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const content = e.target.result;
+          const blob = new Blob([content], { type: file.type });
+          const url = URL.createObjectURL(blob);
+
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = file.name;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+
+          URL.revokeObjectURL(url);
+        };
+        reader.readAsText(file);
+      } else {
+        alert('Please select a file first.');
+      }
+    }
+
+    
+    </script>
+    <br>
+    <a href="https://google.com" target="_blank">Google Search</a>
+
+        
+    <br><br>
+    <input type="text" size="40" maxlength="50"><br>
+    <input type="text" size="40" maxlength="50"><br>
+    <input type="text" size="40" maxlength="50"><br>
+    <input type="text" size="40" maxlength="50"><br>
+    <input type="text" size="40" maxlength="50"><br>
+    </section>
+    
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
